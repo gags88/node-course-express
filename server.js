@@ -39,3 +39,9 @@ app.get('/about', (req, res) => {
 app.listen(3000, () => {
   console.log('Server started on port 3000')
 })
+
+/* 1. Githib SSH "ssh-keygen -t rsa -b 4096 -C 'dev.gagandeepsharma@gmail.com'"
+2. Start SSH Agent eval "$(ssh-agent -s)"
+3. Make sure to Add Identity ssh-add ~/.ssh/id_rsa
+4. https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the -ssh-agent/
+5. Check if SSH has been setup -> ssh -T git@github.com */

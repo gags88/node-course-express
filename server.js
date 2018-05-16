@@ -2,6 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 3000;
 const app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -16,10 +17,9 @@ app.use((req, res, next) => {
   next();
 })
 
-app.use((req, res, next) => {
+/*app.use((req, res, next) => {
   res.render('maintenance.hbs');
-  // next();
-})
+})*/
 
 // Express Middleware - inform express to use public directory for views
 app.use(express.static(__dirname + '/public'));
@@ -36,8 +36,8 @@ app.get('/about', (req, res) => {
   res.render('about.hbs', {pageTitle: 'About page'});
 })
 
-app.listen(3000, () => {
-  console.log('Server started on port 3000')
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`)
 })
 
 /* 1. Githib SSH "ssh-keygen -t rsa -b 4096 -C 'dev.gagandeepsharma@gmail.com'"

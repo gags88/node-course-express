@@ -45,3 +45,16 @@ app.listen(port, () => {
 3. Make sure to Add Identity ssh-add ~/.ssh/id_rsa
 4. https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the -ssh-agent/
 5. Check if SSH has been setup -> ssh -T git@github.com */
+
+/* HEROKU
+  1. Signup on heroku and install heroku CLI
+  2. Login to local machine `heroku login`
+  3. Add SSH key to heroku: `heroku keys:add`
+  4. List your keys: `heroku keys`
+  5. Test connection with heroku: `ssh -v git@heroku.com`
+  6. Update package json file with "start" script as heroku will run this
+  7. Update `port` in server.js as herku wll take it from environment variable
+  8. Create heroku app: `heroku create` [This will also add new remote to git repo which will point to herolu reg]
+  9. Push qpp to heroku: `git push heroku`
+  10. Open Heroku app: `heroku open`
+ */
